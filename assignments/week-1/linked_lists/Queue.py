@@ -1,4 +1,4 @@
-from .linkedlist import *
+from .LinkedList import *
 
 class Queue(LinkedList):
 
