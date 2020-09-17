@@ -22,7 +22,7 @@ class LinkedList(Node):
             else:
                 return current_node
 
-    def remove_node(self, Node):
+    def remove_node(self, node):
         previous_node = None
         current_node = self.head
         while current_node:
@@ -34,6 +34,23 @@ class LinkedList(Node):
                     node = current_node
                     self.head_node = current_node.next
                     return node
+            else:
+                previous_node = current_node
+                current_node = current_node.next
+                continue
+        return
+
+    def remove_data(self, data):
+        previous_node = None
+        current_node = self.head
+        while current_node:
+            if current_node.data == data:
+                try:
+                    previous_node.next = current_node.next
+                    return current_node
+                except(AttributeError):
+                    self.head_node = current_node.next
+                    return current_node
             else:
                 previous_node = current_node
                 current_node = current_node.next
