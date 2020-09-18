@@ -1,0 +1,5 @@
+language: python
+install:
+    - pip3 install pytest
+script:
+    - pytest
