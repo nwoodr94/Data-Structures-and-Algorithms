@@ -14,6 +14,12 @@ class LinkedList(Node):
     def get_head_node(self):
         return self.head
 
+    def enqueue(self, data):
+        tail_node = self.get_tail_node()
+        tail_node.next = Node(data)
+        enqueue = self.get_tail_node()
+        return enqueue    
+
     def get_tail_node(self):
         current_node = self.head
         while current_node:
@@ -49,7 +55,7 @@ class LinkedList(Node):
                     previous_node.next = current_node.next
                     return current_node
                 except(AttributeError):
-                    self.head_node = current_node.next
+                    self.head = current_node.next
                     return current_node
             else:
                 previous_node = current_node

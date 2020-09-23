@@ -2,14 +2,14 @@ from linked_lists import LinkedList, Node
 
 class MyLinkedList(LinkedList):
 
-    def __init__(self):
-        self.head = None
+    def __init__(self, data):
+        self.head = Node(data)
 
     def insert_head_node(self, data=None):
         return super().push(data=data)
 
     def insert_tail_node(self, data=None):
-        return super().insert_tail_node(data=data)
+        return super().enqueue(data=data)
 
     def get_head_node(self):
         return super().get_head_node()
@@ -19,6 +19,24 @@ class MyLinkedList(LinkedList):
 
     def remove_data(self, data):
         return super().remove_data(data)
+
+    def __getitem__(self, key):
+        index = 0
+        current_node = self.head
+        while index != key:
+            current_node = current_node.next
+            index += 1
+        
+        return current_node
+
+    def __len__(self):
+        length = 0
+        current_node = self.head
+        while current_node:
+            length += 1
+            current_node = current_node.next
+
+        return length
 
     def reverse(self): 
         prev = None
