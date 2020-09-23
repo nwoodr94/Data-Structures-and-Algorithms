@@ -1,2 +1,2 @@
-from ArrayList import ArrayList
-from LinkedList import LinkedList
+from .ArrayList import ArrayList
+from .LinkedList import LinkedList
