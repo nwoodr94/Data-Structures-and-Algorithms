@@ -77,6 +77,7 @@ class ArrayList:
 aList = ArrayList([8, 17, 9, 24, 42, 3, 8])
 aList.removeFront(4)
 print(aList) # [42, 3, 8]
+print(type(aList))
 
 
 bList = ArrayList([8, 17, 9, 24, 42, 3, 8])
