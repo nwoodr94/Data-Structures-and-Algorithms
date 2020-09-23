@@ -71,25 +71,3 @@ class ArrayList:
     def __str__(self):
         """Returns the string representation of the ArrayList"""
         return str(self.data)
-
-
-
-aList = ArrayList([8, 17, 9, 24, 42, 3, 8])
-aList.removeFront(4)
-print(aList) # [42, 3, 8]
-print(type(aList))
-
-
-bList = ArrayList([8, 17, 9, 24, 42, 3, 8])
-bList.removeBack(4)
-print(bList) # [8, 17, 9]
-
-
-cList = ArrayList(["a", "b", "c", "d", "a", "d", "d", "e", "f", "d"])
-cList.removeAll("d")
-print(cList) #['a', 'b', 'c', 'a', 'e', 'f']
-
-
-dList = ArrayList([18.2, 7.5, 4.2, 24.9])
-dList.stretch(3)
-print(dList) #[4.2, 4.2, 4.2, 7.5, 7.5, 7.5, 18.2, 18.2, 18.2, 24.9, 24.9, 24.9]
