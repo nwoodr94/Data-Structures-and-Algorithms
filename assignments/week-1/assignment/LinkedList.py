@@ -20,24 +20,6 @@ class MyLinkedList(LinkedList):
     def remove_data(self, data):
         return super().remove_data(data)
 
-    def __getitem__(self, key):
-        index = 0
-        current_node = self.head
-        while index != key:
-            current_node = current_node.next
-            index += 1
-        
-        return current_node
-
-    def __len__(self):
-        length = 0
-        current_node = self.head
-        while current_node:
-            length += 1
-            current_node = current_node.next
-
-        return length
-
     def reverse(self): 
         prev = None
         current = self.head 

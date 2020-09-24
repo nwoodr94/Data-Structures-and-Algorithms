@@ -1,14 +1,13 @@
 from .LinkedList import *
 
+
 class Queue(LinkedList):
 
     def __init__(self, data):
-        self.head_node = Node(data)
+        self.head = Node(data)
 
     def enqueue(self, data):
-        super().insert_tail_node(data)
+        super().enqueue(data)
 
     def dequeue(self):
-        node = super().get_head_node()
-        super().remove_node(node)
-        return node
+        super().remove_node(self.head)

@@ -1,2 +1,3 @@
 from .ArrayList import ArrayList
-from .LinkedList import LinkedList
+from .LinkedList import MyLinkedList
+from .Queue import MyQueue
