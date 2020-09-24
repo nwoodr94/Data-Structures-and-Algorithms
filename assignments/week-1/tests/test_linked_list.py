@@ -11,6 +11,9 @@ def test_insertData():
     llist.insert_tail_node(2)
     assert len(llist) == 3
 
+def test_data():
+    assert llist.data == [1, 0 ,2]
+
 def test_removeHead():
     llist.remove_data(1)
     assert len(llist) == 2

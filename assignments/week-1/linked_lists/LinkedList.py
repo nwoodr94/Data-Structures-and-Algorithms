@@ -3,8 +3,23 @@ from .Node import *
 
 class LinkedList(Node):
 
+    _data = []
+
     def __init__(self):
         self.head = None
+        self._data = []
+
+    @property
+    def data(self):
+        return self._data
+    
+    @data.getter
+    def data(self):
+        current_node = self.head
+        while current_node:
+            self._data += [current_node.data]
+            current_node = current_node.next
+        return self._data    
 
     def push(self, data):
         new_node = Node(data)
