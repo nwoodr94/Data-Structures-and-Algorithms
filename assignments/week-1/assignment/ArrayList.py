@@ -1,4 +1,4 @@
-class ArrayList:
+class MyArrayList:
 
     """
     ArrayList abstracts built-in list functionality.
