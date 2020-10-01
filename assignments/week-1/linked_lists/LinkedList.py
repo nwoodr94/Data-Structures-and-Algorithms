@@ -5,8 +5,8 @@ class LinkedList(Node):
 
     _data = []
 
-    def __init__(self):
-        self.head = None
+    def __init__(self, data=None):
+        self.head = data
         self._data = []
 
     @property

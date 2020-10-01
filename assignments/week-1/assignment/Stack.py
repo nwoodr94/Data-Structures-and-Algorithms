@@ -4,8 +4,17 @@ from linked_lists.Queue import Queue
 
 class MyStack(LinkedList):
 
-    def __init__(self, data):
+    def __init__(self, data=None):
         self.head = Node(data)
+
+    @property
+    def data(self):
+        return super().data
+    
+    #Calls the parent class property by passing self.
+    @data.getter
+    def data(self):
+        return LinkedList.data.fget(self)
 
     def push(self, data):
         return super().push(data)
@@ -15,6 +24,10 @@ class MyStack(LinkedList):
 
     @staticmethod
     def copyStack(stack):
+        """
+        Accepts a stack and returns a deep copy by loading nodes into an intermediary queue.
+
+        """
         current_node = stack.head
         queue = Queue(current_node)
         while current_node:

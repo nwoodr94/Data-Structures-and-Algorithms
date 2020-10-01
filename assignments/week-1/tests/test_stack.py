@@ -1,6 +1,6 @@
 from assignment.Stack import MyStack
 
-stack = MyStack(0)
+stack = MyStack()
 
 def test_isinstance():
     assert isinstance(stack, MyStack)

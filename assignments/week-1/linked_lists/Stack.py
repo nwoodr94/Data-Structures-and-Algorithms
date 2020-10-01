@@ -4,7 +4,7 @@ from .Queue import *
 
 class Stack(LinkedList):
 
-    def __init__(self, data):
+    def __init__(self, data=None):
         self.head = Node(data)
 
     def push(self, data):
