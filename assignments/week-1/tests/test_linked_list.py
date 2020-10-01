@@ -11,11 +11,11 @@ def test_insertData():
     llist.insert_tail_node(2)
     assert len(llist) == 3
 
-# def test_data():
-#     llist = MyLinkedList(1)
-#     llist.insert_head_node(2)
-#     llist.insert_tail_node(3)
-#     assert llist.data == [2, 1 ,3]
+def test_data():
+    llist = MyLinkedList(1)
+    llist.insert_head_node(2)
+    llist.insert_tail_node(3)
+    assert llist.data == [2, 1 ,3]
 
 def test_removeHead():
     llist = MyLinkedList(0)

@@ -4,6 +4,8 @@ from linked_lists.Queue import Queue
 
 class MyQueue(LinkedList):
 
+    _data = []
+
     def __init__(self, data=None):
         self.head = Node(data)
 
@@ -18,16 +20,16 @@ class MyQueue(LinkedList):
 
     @property
     def data(self):
-        return super().data
+        return self._data
     
-    #Calls the parent class property by passing self.
+    #Calls the parent class property and passes self.
     @data.getter
     def data(self):
-        return LinkedList.data.fget(self)
+        return super().data
 
     @staticmethod
     def rearrange(queue):
-        odds = Queue()
+        odds = MyQueue()
         current_node = queue.head
 
         for i in range(len(queue)):
