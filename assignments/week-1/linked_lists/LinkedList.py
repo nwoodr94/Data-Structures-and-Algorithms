@@ -6,7 +6,10 @@ class LinkedList(Node):
     _data = []
 
     def __init__(self, data=None):
-        self.head = data
+        if data == None:
+            self.head = data
+        else:
+            self.head = Node(data)
         self._data = []
 
     @property
@@ -32,7 +35,12 @@ class LinkedList(Node):
 
     def enqueue(self, data):
         tail_node = self.get_tail_node()
-        tail_node.next = Node(data)
+
+        try:
+            tail_node.next = Node(data)
+        except AttributeError:
+            self.head = Node(data)
+
         return
 
     def get_tail_node(self):

@@ -4,17 +4,19 @@ from linked_lists.Queue import Queue
 
 class MyStack(LinkedList):
 
+    _data = []
+
     def __init__(self, data=None):
         self.head = Node(data)
 
     @property
     def data(self):
-        return super().data
+        return self._data
     
-    #Calls the parent class property by passing self.
+    #Calls the parent class property and passes self.
     @data.getter
     def data(self):
-        return LinkedList.data.fget(self)
+        return super().data
 
     def push(self, data):
         return super().push(data)

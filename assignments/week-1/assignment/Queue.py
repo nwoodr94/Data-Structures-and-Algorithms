@@ -1,13 +1,14 @@
 from linked_lists.LinkedList import LinkedList
 from linked_lists.Node import Node
 from linked_lists.Queue import Queue
+from .Stack import MyStack
 
 class MyQueue(LinkedList):
 
     _data = []
 
     def __init__(self, data=None):
-        self.head = Node(data)
+        super().__init__(data)
 
     def enqueue(self, data):
         return super().enqueue(data)
@@ -44,10 +45,24 @@ class MyQueue(LinkedList):
 
             current_node = current_node.next
 
-        current_node = odds.head.next
+        current_node = odds.head
         while current_node:
             queue.enqueue(current_node.data)
 
             current_node = current_node.next      
 
         return queue
+
+    @staticmethod
+    def isPalindrome(queue):
+        length = len(queue) // 2
+        stack = MyStack()
+        stack.remove_node(stack.get_head_node())
+
+        index = 0
+        while index < length:
+            stack.push(queue.dequeue().data)
+            index += 1
+
+        return True if queue.data == stack.data else False
+

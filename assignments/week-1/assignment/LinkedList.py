@@ -3,7 +3,7 @@ from linked_lists import LinkedList, Node
 class MyLinkedList(LinkedList):
 
     def __init__(self, data=None):
-        self.head = Node(data)
+        super().__init__(data)
 
     def insert_head_node(self, data=None):
         return super().push(data=data)
